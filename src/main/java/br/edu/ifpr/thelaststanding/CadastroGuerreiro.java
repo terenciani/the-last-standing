@@ -4,6 +4,10 @@
  */
 package br.edu.ifpr.thelaststanding;
 
+import br.edu.ifpr.thelaststanding.conexao.Conexao;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aluno
@@ -15,16 +19,16 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
      */
     public CadastroGuerreiro() {
         initComponents();
-         // Gerar um inteiro entre min e max
+        // Gerar um inteiro entre min e max
         int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
         txtPontosAtaque.setText("" + ataque);
-        
+
         int defesa = (int) (Math.random() * (15 - 10 + 1) + 10);
         txtPontosDefesa.setText("" + defesa);
-        
+
         int forca = (int) (Math.random() * (10 - 2 + 1) + 2);
         txtForca.setText("" + forca);
-        
+
         int velocidade = (int) (Math.random() * (10 - 2 + 1) + 2);
         txtVelocidade.setText("" + velocidade);
     }
@@ -210,15 +214,17 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Guerreiro guerreiro = new Guerreiro();
-        
+
         guerreiro.setNome(txtNome.getText());
         guerreiro.setPontosVida(Integer.parseInt(txtPontosVida.getText()));
         guerreiro.setPontosAtaque(Integer.parseInt(txtPontosAtaque.getText()));
         guerreiro.setPontosDefesa(Integer.parseInt(txtPontosDefesa.getText()));
         guerreiro.setForca(Integer.parseInt(txtForca.getText()));
         guerreiro.setVelocidade(Integer.parseInt(txtVelocidade.getText()));
-        
-        
+
+        salvar(guerreiro);
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -272,4 +278,26 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
     private javax.swing.JTextField txtPontosVida;
     private javax.swing.JTextField txtVelocidade;
     // End of variables declaration//GEN-END:variables
+
+    private void salvar(Guerreiro guerreiro) {
+        String sql = "INSERT "
+                + "INTO `tb_guerreiro` "
+                + "(`nome`, `ponto_vida`, `ponto_ataque`, `ponto_defesa`, `forca`, `velocidade`) "
+                + "VALUES "
+                + "(?, ?, ?, ?, ?, ?);";
+        try {
+                PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
+                preparacaoDaInstrucao.setString(1, guerreiro.getNome());
+                preparacaoDaInstrucao.setInt(2, guerreiro.getPontosVida());
+                preparacaoDaInstrucao.setInt(3, guerreiro.getPontosAtaque());
+                preparacaoDaInstrucao.setInt(4, guerreiro.getPontosDefesa());
+                preparacaoDaInstrucao.setInt(5, guerreiro.getForca());
+                preparacaoDaInstrucao.setInt(6, guerreiro.getVelocidade());
+                preparacaoDaInstrucao.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
+        } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Erro ao salvar!");
+        }
+    }
 }
