@@ -295,6 +295,8 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
                 preparacaoDaInstrucao.setInt(6, guerreiro.getVelocidade());
                 preparacaoDaInstrucao.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
+                this.dispose(); // libera a memória da janela
+                new TelaAbertura().setVisible(true); // exibe a tela inicial
         } catch (Exception e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(this, "Erro ao salvar!");
