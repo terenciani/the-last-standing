@@ -63,6 +63,10 @@ class Guerreiro {
     public void setVelocidade(int velocidade) {
         this.velocidade = velocidade;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Guerreiro{" + "nome=" + nome + ", pontosVida=" + pontosVida + ", pontosAtaque=" + pontosAtaque + ", pontosDefesa=" + pontosDefesa + ", forca=" + forca + ", velocidade=" + velocidade + '}';
+    }
+     
 }
