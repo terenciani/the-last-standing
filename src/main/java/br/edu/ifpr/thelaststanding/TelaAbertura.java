@@ -29,12 +29,94 @@ public class TelaAbertura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCadastrarGuerreiro = new javax.swing.JButton();
-        btnCadastrarMistico = new javax.swing.JButton();
-        btnCadastrarItem = new javax.swing.JButton();
         btnBatalhar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblItens = new javax.swing.JLabel();
+        btnCadastrarItem = new javax.swing.JButton();
+        btnAlterarItem = new javax.swing.JButton();
+        btnExcluirItem = new javax.swing.JButton();
+        btnVerItem = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblGuerreiro = new javax.swing.JLabel();
+        btnCadastrarGuerreiro = new javax.swing.JButton();
+        btnAlterarGuerreiro = new javax.swing.JButton();
+        btnExcluirGuerreiro = new javax.swing.JButton();
+        btnVerGuerreiro = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lblMistico = new javax.swing.JLabel();
+        btnCadastrarMistico = new javax.swing.JButton();
+        btnAlterarMistico = new javax.swing.JButton();
+        btnExcluirMistico = new javax.swing.JButton();
+        btnVerMistico = new javax.swing.JButton();
+        imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(910, 600));
+        setSize(new java.awt.Dimension(910, 600));
+        getContentPane().setLayout(null);
+
+        btnBatalhar.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        btnBatalhar.setText("Batalhar");
+        btnBatalhar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBatalharActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBatalhar);
+        btnBatalhar.setBounds(20, 430, 860, 120);
+
+        jPanel1.setBackground(new java.awt.Color(242, 255, 255));
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(new java.awt.GridLayout(5, 0, 0, 5));
+
+        lblItens.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblItens.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblItens.setText("Itens");
+        jPanel1.add(lblItens);
+
+        btnCadastrarItem.setText("Cadastrar Item");
+        btnCadastrarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarItemActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCadastrarItem);
+
+        btnAlterarItem.setText("Alterar Item");
+        btnAlterarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarItemActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAlterarItem);
+
+        btnExcluirItem.setText("Excluir Item");
+        btnExcluirItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirItemActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnExcluirItem);
+
+        btnVerItem.setText("Ver Item");
+        btnVerItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerItemActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVerItem);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(310, 80, 280, 290);
+
+        jPanel2.setBackground(new java.awt.Color(242, 255, 255));
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new java.awt.GridLayout(5, 0, 0, 5));
+
+        lblGuerreiro.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblGuerreiro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblGuerreiro.setText("Guerreiro");
+        jPanel2.add(lblGuerreiro);
 
         btnCadastrarGuerreiro.setText("Cadastrar Guerreiro");
         btnCadastrarGuerreiro.addActionListener(new java.awt.event.ActionListener() {
@@ -42,6 +124,43 @@ public class TelaAbertura extends javax.swing.JFrame {
                 btnCadastrarGuerreiroActionPerformed(evt);
             }
         });
+        jPanel2.add(btnCadastrarGuerreiro);
+
+        btnAlterarGuerreiro.setText("Alterar Guerreiro");
+        btnAlterarGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarGuerreiroActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAlterarGuerreiro);
+
+        btnExcluirGuerreiro.setText("Excluir Guerreiro");
+        btnExcluirGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirGuerreiroActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnExcluirGuerreiro);
+
+        btnVerGuerreiro.setText("Ver Guerreiro");
+        btnVerGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerGuerreiroActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnVerGuerreiro);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(600, 80, 280, 290);
+
+        jPanel3.setBackground(new java.awt.Color(242, 255, 255));
+        jPanel3.setOpaque(false);
+        jPanel3.setLayout(new java.awt.GridLayout(5, 0, 0, 5));
+
+        lblMistico.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblMistico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMistico.setText("Místico");
+        jPanel3.add(lblMistico);
 
         btnCadastrarMistico.setText("Cadastrar Místico");
         btnCadastrarMistico.addActionListener(new java.awt.event.ActionListener() {
@@ -49,65 +168,96 @@ public class TelaAbertura extends javax.swing.JFrame {
                 btnCadastrarMisticoActionPerformed(evt);
             }
         });
+        jPanel3.add(btnCadastrarMistico);
 
-        btnCadastrarItem.setText("Cadastrar Itens");
-
-        btnBatalhar.setText("Batalhar");
-        btnBatalhar.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterarMistico.setText("Alterar Místico");
+        btnAlterarMistico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBatalharActionPerformed(evt);
+                btnAlterarMisticoActionPerformed(evt);
             }
         });
+        jPanel3.add(btnAlterarMistico);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBatalhar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCadastrarGuerreiro)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCadastrarMistico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCadastrarItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrarGuerreiro)
-                    .addComponent(btnCadastrarMistico))
-                .addGap(26, 26, 26)
-                .addComponent(btnCadastrarItem)
-                .addGap(42, 42, 42)
-                .addComponent(btnBatalhar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
+        btnExcluirMistico.setText("Excluir Místico");
+        btnExcluirMistico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirMisticoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnExcluirMistico);
+
+        btnVerMistico.setText("Ver Místico");
+        btnVerMistico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerMisticoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnVerMistico);
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(20, 80, 280, 290);
+
+        imgFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/background.png"))); // NOI18N
+        getContentPane().add(imgFundo);
+        imgFundo.setBounds(0, 0, 910, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCadastrarMisticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarMisticoActionPerformed
-        CadastroMistico cadastroMistico = new CadastroMistico();
-        cadastroMistico.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnCadastrarMisticoActionPerformed
 
     private void btnBatalharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalharActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBatalharActionPerformed
 
-    private void btnCadastrarGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarGuerreiroActionPerformed
+    private void btnCadastrarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarItemActionPerformed
         CadastroGuerreiro cadastroGuerreiro = new CadastroGuerreiro();
         cadastroGuerreiro.setVisible(true);
         this.setVisible(false);
         //this.dispose(); libera a memória
+    }//GEN-LAST:event_btnCadastrarItemActionPerformed
+
+    private void btnAlterarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarItemActionPerformed
+
+    private void btnExcluirItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirItemActionPerformed
+
+    private void btnVerItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerItemActionPerformed
+
+    private void btnCadastrarGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarGuerreiroActionPerformed
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastrarGuerreiroActionPerformed
+
+    private void btnAlterarGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarGuerreiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarGuerreiroActionPerformed
+
+    private void btnExcluirGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirGuerreiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirGuerreiroActionPerformed
+
+    private void btnVerGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerGuerreiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerGuerreiroActionPerformed
+
+    private void btnCadastrarMisticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarMisticoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarMisticoActionPerformed
+
+    private void btnAlterarMisticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarMisticoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarMisticoActionPerformed
+
+    private void btnExcluirMisticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirMisticoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirMisticoActionPerformed
+
+    private void btnVerMisticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerMisticoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerMisticoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,9 +295,25 @@ public class TelaAbertura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterarGuerreiro;
+    private javax.swing.JButton btnAlterarItem;
+    private javax.swing.JButton btnAlterarMistico;
     private javax.swing.JButton btnBatalhar;
     private javax.swing.JButton btnCadastrarGuerreiro;
     private javax.swing.JButton btnCadastrarItem;
     private javax.swing.JButton btnCadastrarMistico;
+    private javax.swing.JButton btnExcluirGuerreiro;
+    private javax.swing.JButton btnExcluirItem;
+    private javax.swing.JButton btnExcluirMistico;
+    private javax.swing.JButton btnVerGuerreiro;
+    private javax.swing.JButton btnVerItem;
+    private javax.swing.JButton btnVerMistico;
+    private javax.swing.JLabel imgFundo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblGuerreiro;
+    private javax.swing.JLabel lblItens;
+    private javax.swing.JLabel lblMistico;
     // End of variables declaration//GEN-END:variables
 }

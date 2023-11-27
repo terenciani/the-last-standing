@@ -8,6 +8,14 @@ public class Personagem {
     protected int pontosAtaque;
     protected int pontosDefesa;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
