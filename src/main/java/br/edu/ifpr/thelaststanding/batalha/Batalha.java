@@ -1,5 +1,6 @@
-package br.edu.ifpr.thelaststanding;
+package br.edu.ifpr.thelaststanding.batalha;
 
+import br.edu.ifpr.thelaststanding.*;
 import br.edu.ifpr.thelaststanding.conexao.Conexao;
 import br.edu.ifpr.thelaststanding.modelo.Guerreiro;
 import java.sql.PreparedStatement;
@@ -9,12 +10,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class VerGuerreiro extends javax.swing.JFrame {
+public class Batalha extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroGuerreiro
      */
-    public VerGuerreiro() {
+    public Batalha() {
         initComponents();
         // Gerar um inteiro entre min e max
         
@@ -248,21 +249,23 @@ public class VerGuerreiro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Batalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Batalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Batalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Batalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VerGuerreiro().setVisible(true);
+                new Batalha().setVisible(true);
             }
         });
     }
@@ -328,7 +331,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
             guerreiro.setForca(resultado.getInt("forca"));
             guerreiro.setVelocidade(resultado.getInt("velocidade"));
         } catch (SQLException ex) {
-            Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Batalha.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
         return guerreiro;
@@ -356,7 +359,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
                 System.out.println(guerreiro.toString());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Batalha.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
     }

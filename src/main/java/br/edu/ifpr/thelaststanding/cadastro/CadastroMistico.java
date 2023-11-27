@@ -1,40 +1,27 @@
-package br.edu.ifpr.thelaststanding;
+package br.edu.ifpr.thelaststanding.cadastro;
 
+import br.edu.ifpr.thelaststanding.TelaAbertura;
 import br.edu.ifpr.thelaststanding.conexao.Conexao;
 import br.edu.ifpr.thelaststanding.modelo.Guerreiro;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class VerGuerreiro extends javax.swing.JFrame {
+public class CadastroMistico extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroGuerreiro
-     */
-    public VerGuerreiro() {
+    public CadastroMistico() {
         initComponents();
         // Gerar um inteiro entre min e max
-        
-        Guerreiro guerreiro = buscarGuerreiro();
-        
-        txtNome.setText(guerreiro.getNome());
-        
-        int ataque = guerreiro.getPontosAtaque();
+        int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
         txtPontosAtaque.setText("" + ataque);
 
-        int defesa = guerreiro.getPontosDefesa();
+        int defesa = (int) (Math.random() * (15 - 10 + 1) + 10);
         txtPontosDefesa.setText("" + defesa);
 
-        int forca = guerreiro.getForca();
+        int forca = (int) (Math.random() * (10 - 2 + 1) + 2);
         txtForca.setText("" + forca);
 
-        int velocidade = guerreiro.getVelocidade();
+        int velocidade = (int) (Math.random() * (10 - 2 + 1) + 2);
         txtVelocidade.setText("" + velocidade);
-        
-        imprimeGuerreiros();
     }
 
     /**
@@ -64,7 +51,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Foto do Gueirreiro");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mistica.png"))); // NOI18N
 
         jLabel2.setText("Nome");
 
@@ -248,13 +235,13 @@ public class VerGuerreiro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VerGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -262,7 +249,7 @@ public class VerGuerreiro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VerGuerreiro().setVisible(true);
+                new CadastroMistico().setVisible(true);
             }
         });
     }
@@ -305,59 +292,6 @@ public class VerGuerreiro extends javax.swing.JFrame {
         } catch (Exception e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(this, "Erro ao salvar!");
-        }
-    }
-
-    private Guerreiro buscarGuerreiro() {
-        
-        Guerreiro guerreiro = new Guerreiro();
-        
-        String sql = "SELECT * FROM `tb_guerreiro`;";
-        
-        
-        
-        try {
-            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
-            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
-            resultado.next();
-            
-            guerreiro.setNome(resultado.getString("nome"));
-            guerreiro.setPontosVida(resultado.getInt("ponto_vida"));
-            guerreiro.setPontosAtaque(resultado.getInt("ponto_ataque"));
-            guerreiro.setPontosDefesa(resultado.getInt("ponto_defesa"));
-            guerreiro.setForca(resultado.getInt("forca"));
-            guerreiro.setVelocidade(resultado.getInt("velocidade"));
-        } catch (SQLException ex) {
-            Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
-        }
-        return guerreiro;
-    }
-    
-    private void imprimeGuerreiros() {
-        
-        Guerreiro guerreiro = new Guerreiro();
-        
-        String sql = "SELECT * FROM `tb_guerreiro`;";
-        
-        
-        
-        try {
-            PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
-            ResultSet resultado = preparacaoDaInstrucao.executeQuery();
-            
-            while(resultado.next()){
-                guerreiro.setNome(resultado.getString("nome"));
-                guerreiro.setPontosVida(resultado.getInt("ponto_vida"));
-                guerreiro.setPontosAtaque(resultado.getInt("ponto_ataque"));
-                guerreiro.setPontosDefesa(resultado.getInt("ponto_defesa"));
-                guerreiro.setForca(resultado.getInt("forca"));
-                guerreiro.setVelocidade(resultado.getInt("velocidade"));
-                System.out.println(guerreiro.toString());
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(VerGuerreiro.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
         }
     }
 }
